@@ -1,68 +1,40 @@
-import { Typography, TableRow, TableCell, SxProps, Box } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { Typography, TableRow, TableCell, useTheme } from "@mui/material";
 import Iconify from "../../components/Iconify";
 
-const LinkWrapper = styled("a")({
-  color: "inherit",
-  textDecoration: "none",
-  backgroundColor: "#F4F6F8",
-  borderRadius: "8px",
-  padding: "4px 8px",
-  width: "fit-content",
-  display: "flex",
-  alignItems: "center",
-  transition: "transform 0.3s",
-  "&:hover": {
-    transform: "scale(1.1)",
-    transition: "transform 0.3s",
-  },
-});
-
 export default function FeaturesTableRow({ row, sx }) {
-  const { stakeholderGroup, stakeholderNumber, TPGSlink, TPGSZoneMap } = row;
+  const theme = useTheme();
+  const cells = Object.values(row).filter((e) => typeof e === "boolean");
 
-  // table-layout: fixed
+  const tickOrPlus = (value) => {
+    if (value) return <Iconify icon={"charm:tick"} color="#fff" />;
+    return (
+      <Iconify
+        icon={"charm:plus"}
+        style={{ transform: "rotate(45deg)" }}
+        color="#fff"
+      />
+    );
+  };
+
   return (
-    <TableRow
-      hover
-      sx={{
-        borderBottom: " 1px solid rgba(145, 158, 171, 0.24)",
-        // height: '80px',
-        ...sx,
-      }}
-    >
-      <TableCell sx={{ width: "300px" }}>
-        <Typography
-          variant="subtitle2"
-          // noWrap
-          sx={{ width: "fit-content" }}
-        >
-          {stakeholderGroup}
+    <TableRow sx={{ borderBottom: "1px solid #E6E6E84D" }}>
+      <TableCell>
+        <Typography variant="body1" color={"#fff"} sx={{ fontSize: "20px" }}>
+          {row.label}
         </Typography>
       </TableCell>
 
-      <TableCell sx={{ width: "130px" }}>{stakeholderNumber}</TableCell>
-
-      <TableCell sx={{ width: "110px" }}>
-        <LinkWrapper href={TPGSlink} target="blank">
-          <Iconify
-            icon={"akar-icons:link-chain"}
-            sx={{
-              width: 20,
-              height: 20,
-              color: "#000",
-            }}
-          />
-        </LinkWrapper>
+      <TableCell align="center" sx={{ bgcolor: "#0069D91A" }}>
+        <Iconify
+          icon={"teenyicons:tick-circle-solid"}
+          color={theme.palette.validation.success}
+        />
       </TableCell>
-
-      <TableCell
-        align="center"
-        sx={{ width: "200px", display: "flex", gap: 2, alignItems: "center" }}
-      >
-        <Box sx={{ flexGrow: 1 }}></Box>
-        {`${TPGSZoneMap} %`}
-      </TableCell>
+      {cells.map((cell, index) => (
+        <TableCell key={index} align="center">
+          {tickOrPlus(cell)}
+        </TableCell>
+      ))}
     </TableRow>
   );
 }

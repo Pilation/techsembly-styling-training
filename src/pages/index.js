@@ -49,9 +49,10 @@ export default function Home() {
       {/* header */}
       <Header />
 
-      <Box component={"main"} sx={{ px: 1.5 }}>
-        <Join30days />
-        <PricingCards />
+      <Box component={"main"} sx={{ pb: 20 }}>
+        <Join30days sx={{ mt: 8 }} />
+        <PricingCards sx={{ mt: 8 }} />
+        <FeaturesTable sx={{ mt: 12 }} />
       </Box>
 
       {/* <main className={styles.main}></main>

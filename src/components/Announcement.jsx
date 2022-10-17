@@ -4,12 +4,13 @@ import PinkButton from "./PinkButton";
 
 // ----------------------------------------------------------------------
 
-export default function Announcement({ icon, sx, ...other }) {
+export default function Announcement({ icon, sx, handleClick, ...other }) {
   return (
     <Stack
       direction={"row"}
       sx={{ py: 1.75, px: 1.5, bgcolor: "#0A1B2B" }}
       alignItems={"center"}
+      justifyContent={"space-between"}
       gap={3}
     >
       <PinkButton text={"Announcement"} />
@@ -18,7 +19,7 @@ export default function Announcement({ icon, sx, ...other }) {
         Try Techsembly today for a 12 day free trial period. No Additional
         costs/Unexpected fees
       </Typography>
-      <IconButton sx={{ p: 0.5 }} onClick={() => setTryTodayIsOpen(false)}>
+      <IconButton sx={{ p: 0.5 }} onClick={handleClick}>
         <Iconify
           icon={"eva:close-fill"}
           width={20}

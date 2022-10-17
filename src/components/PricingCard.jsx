@@ -39,7 +39,7 @@ function ProsPoint({ value }) {
   );
 }
 
-export default function PricingCard({ color, pricingCardData, children }) {
+export default function PricingCard({ color, pricingCardData, children, sx }) {
   const {
     clientType,
     clienDescription,
@@ -59,6 +59,8 @@ export default function PricingCard({ color, pricingCardData, children }) {
         bgcolor: "#fff",
         px: 3,
         pb: 3,
+        flex: "1 1 415px",
+        ...sx,
       }}
     >
       <TypographyTextCenter variant="h3" component="h3" sx={{ my: 4 }}>

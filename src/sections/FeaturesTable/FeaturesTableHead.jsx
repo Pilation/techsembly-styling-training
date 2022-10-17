@@ -1,19 +1,33 @@
-import { TableHead, TableRow, TableCell, SxProps } from "@mui/material";
+import { TableHead, TableRow, TableCell, Typography } from "@mui/material";
+import Image from "next/image";
+import techsemblyLogo from "../../../public/logo/techsemblyLogo.svg";
+import EmptyRow from "./EmptyRow";
 
-export default function FeaturesTableHead({ headLabel, sx }) {
+function Logo({ src, alt }) {
+  return <Image src={src} width={180} height={30} alt={alt} />;
+}
+
+export default function FeaturesTableHead({ labels }) {
   return (
-    <TableHead sx={{ ...sx }}>
+    <TableHead>
+      <EmptyRow />
       <TableRow>
-        {headLabel.map((headCell) => (
-          <TableCell
-            key={headCell.id}
-            sx={{
-              backgroundColor: "inherit",
-              borderBottom: " 1px solid rgba(145, 158, 171, 0.24)",
-              color: "inherit",
-            }}
+        <TableCell>
+          <Typography
+            variant="h3"
+            component={"h3"}
+            sx={{ width: "fit-content", color: "#fff" }}
           >
-            {headCell.label}
+            Features
+          </Typography>
+        </TableCell>
+        <TableCell sx={{ bgcolor: "#0069D91A" }}>
+          <Logo src={techsemblyLogo} alt={"techsemblyLogo"} />
+        </TableCell>
+
+        {labels.map((logo, index) => (
+          <TableCell key={index}>
+            <Logo src={logo.src} alt={logo.alt} />
           </TableCell>
         ))}
       </TableRow>

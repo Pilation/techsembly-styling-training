@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Box } from "@mui/material";
-import logoPath from "../../public/logo/techsemblyLogo.svg";
+import logoPath from "../../public/logo/techsemblyLogoBlack.svg";
 import NextLink from "next/link";
 
 // ----------------------------------------------------------------------

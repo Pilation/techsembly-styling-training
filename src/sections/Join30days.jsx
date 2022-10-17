@@ -6,10 +6,10 @@ const TypographyTextCenter = styled(Typography)({
   textAlign: "center",
 });
 
-export default function Join30days() {
+export default function Join30days({ sx }) {
   const theme = useTheme();
   return (
-    <Stack component={"section"} sx={{ gap: 3 }} alignItems={"center"}>
+    <Stack component={"section"} sx={{ gap: 3, ...sx }} alignItems={"center"}>
       <TypographyTextCenter variant="h1" component="h1">
         Join us with your team for 30 days
       </TypographyTextCenter>

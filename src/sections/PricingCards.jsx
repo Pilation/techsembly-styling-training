@@ -96,14 +96,16 @@ function LaunchAcrossMultipleMarkets() {
   );
 }
 
-export default function PricingCards() {
+export default function PricingCards({ sx }) {
   const theme = useTheme();
   return (
     <Stack
       component={"section"}
       direction={"row"}
       flexWrap={"wrap"}
-      alignItems={"center"}
+      alignItems={"stretch"}
+      justifyContent={"center"}
+      sx={{ gap: 7, px: 1.5, ...sx }}
     >
       <PricingCard
         color={theme.palette.blue.light}

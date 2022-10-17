@@ -4,35 +4,137 @@ import {
   TableContainer,
   Table,
   TableBody,
-  TablePagination,
-  SxProps,
-  styled,
-  Button,
+  Stack,
+  useTheme,
+  Box,
+  Typography,
 } from "@mui/material";
-// hooks
-import { useState } from "react";
-import useTable from "../../hooks/useTable";
+
+import bigCommerceLogo from "../../../public/logo/bigCommerceLogo.svg";
+import magentoLogo from "../../../public/logo/magentoLogo.svg";
+import shopifyLogo from "../../../public/logo/shopifyLogo.svg";
 
 // components
 import FeaturesTableHead from "./FeaturesTableHead";
 import FeaturesTableRow from "./FeaturesTableRow";
-import Scrollbar from "../../components/Scrollbar";
+import EmptyRow from "./EmptyRow";
 
-// If table will became bigger, we can use Scrollbar component with fixed width
-export default function FeaturesTable({ stakeholderList, headLabel, styles }) {
+const logos = [
+  { src: bigCommerceLogo, alt: "bigCommerceLogo" },
+  { src: shopifyLogo, alt: "shopifyLogo" },
+  { src: magentoLogo, alt: "magentoLogo" },
+];
+
+const rowsValues = [
+  {
+    label: "Central platform & global expansion",
+    bigCommerce: false,
+    shopify: false,
+    magento: false,
+  },
+  {
+    label: "30-Day Free Trial",
+    bigCommerce: true,
+    shopify: false,
+    magento: false,
+  },
+  {
+    label: "Marketplace as standard",
+    bigCommerce: false,
+    shopify: false,
+    magento: false,
+  },
+  {
+    label: "Multi-base Currency",
+    bigCommerce: false,
+    shopify: false,
+    magento: false,
+  },
+  {
+    label: "Custom options built in as standard",
+    bigCommerce: false,
+    shopify: false,
+    magento: false,
+  },
+  {
+    label: "Independent Teams",
+    bigCommerce: false,
+    shopify: false,
+    magento: false,
+  },
+  {
+    label: "Centralised Analytics",
+    bigCommerce: false,
+    shopify: false,
+    magento: false,
+  },
+  {
+    label: "Ratings & Reviews",
+    bigCommerce: true,
+    shopify: true,
+    magento: true,
+  },
+];
+
+function NoDevelopersNeeded() {
+  const theme = useTheme();
   return (
-    <Scrollbar>
-      {/* <TableContainer sx={{ minWidth: 800, position: 'relative' }}> */}
-      <TableContainer sx={{ width: "fit-content", position: "relative" }}>
-        <Table size={dense ? "small" : "medium"}>
-          {/* <FeaturesTableHead headLabel={headLabel} sx={{ ...styles?.head }} /> */}
-          <TableBody>
-            {/* {features.map((feature) => (
-              <FeaturesTableRow key={feature.id} row={feature} />
-            ))} */}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </Scrollbar>
+    <Stack
+      alignItems={"center"}
+      justifyContent={"center"}
+      sx={{
+        bgcolor: theme.palette.blue.light,
+        p: 3,
+        width: "222px",
+        aspectRatio: "1/1",
+        position: "absolute",
+        bottom: "-170px",
+        right: "51px",
+        borderRadius: "50%",
+        transform: "rotate(20deg)",
+      }}
+    >
+      <Typography
+        variant="h2"
+        component="h2"
+        color="#fff"
+        align="center"
+        sx={{ fontWeight: "normal" }}
+      >
+        No developers needed
+      </Typography>
+    </Stack>
+  );
+}
+
+export default function FeaturesTable({ sx }) {
+  const theme = useTheme();
+  return (
+    <Box component={"section"} sx={{ position: "relative" }}>
+      <Box
+        sx={{
+          bgcolor: theme.palette.dark[900],
+          overflowX: "auto",
+          ...sx,
+        }}
+      >
+        <TableContainer
+          sx={{
+            minWidth: "1440px",
+          }}
+        >
+          <Table>
+            <FeaturesTableHead labels={logos} />
+            <TableBody>
+              {rowsValues.map((rowsValue, index) => (
+                <FeaturesTableRow key={index} row={rowsValue} />
+              ))}
+              <EmptyRow />
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Box>
+      <NoDevelopersNeeded />
+    </Box>
   );
 }

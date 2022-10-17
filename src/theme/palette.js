@@ -121,6 +121,7 @@ const COMMON = {
     disabledOpacity: 0.48,
   },
   blue: Blue,
+  dark: Dark,
   validation: Validation,
 };
 
