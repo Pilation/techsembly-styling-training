@@ -12,7 +12,11 @@ export default function Header() {
       direction={"row"}
       alignItems={"center"}
       justifyContent={"space-between"}
-      sx={{ py: 2.5, px: 1.5 }}
+      sx={{
+        py: 2.5,
+        px: 1.5,
+        boxShadow: "0px 0px 20px rgba(207, 207, 207, 0.3)",
+      }}
     >
       <Logo />
 

@@ -10,6 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 
+// logos
 import bigCommerceLogo from "../../../public/logo/bigCommerceLogo.svg";
 import magentoLogo from "../../../public/logo/magentoLogo.svg";
 import shopifyLogo from "../../../public/logo/shopifyLogo.svg";
@@ -18,6 +19,9 @@ import shopifyLogo from "../../../public/logo/shopifyLogo.svg";
 import FeaturesTableHead from "./FeaturesTableHead";
 import FeaturesTableRow from "./FeaturesTableRow";
 import EmptyRow from "./EmptyRow";
+
+// hooks
+import useResponsive from "../../hooks/useResponsive";
 
 const logos = [
   { src: bigCommerceLogo, alt: "bigCommerceLogo" },
@@ -78,6 +82,7 @@ const rowsValues = [
 
 function NoDevelopersNeeded() {
   const theme = useTheme();
+  const isMobile = useResponsive("down", "sm");
   return (
     <Stack
       alignItems={"center"}
@@ -85,11 +90,12 @@ function NoDevelopersNeeded() {
       sx={{
         bgcolor: theme.palette.blue.light,
         p: 3,
-        width: "222px",
+        width: isMobile ? "137px" : "222px",
+
         aspectRatio: "1/1",
         position: "absolute",
-        bottom: "-170px",
-        right: "51px",
+        bottom: isMobile ? "-60px" : "-170px",
+        right: isMobile ? "20px" : "51px",
         borderRadius: "50%",
         transform: "rotate(20deg)",
       }}
@@ -99,7 +105,7 @@ function NoDevelopersNeeded() {
         component="h2"
         color="#fff"
         align="center"
-        sx={{ fontWeight: "normal" }}
+        sx={{ fontWeight: "normal", fontSize: isMobile ? "20px" : "32px" }}
       >
         No developers needed
       </Typography>

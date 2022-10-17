@@ -24,13 +24,13 @@ function ProsPoint({ value }) {
     <Stack
       direction={"row"}
       alignItems={"center"}
-      // justifyContent={"space-between"}
       component={"li"}
       sx={{ gap: 2.5 }}
     >
       <Iconify
         icon={"teenyicons:tick-circle-solid"}
         color={theme.palette.validation.success}
+        style={{ flexShrink: 0 }}
       />
       <Typography variant="body2" component="span" color="text.secondary">
         {value}

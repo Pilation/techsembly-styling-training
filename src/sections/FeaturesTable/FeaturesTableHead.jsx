@@ -21,12 +21,12 @@ export default function FeaturesTableHead({ labels }) {
             Features
           </Typography>
         </TableCell>
-        <TableCell sx={{ bgcolor: "#0069D91A" }}>
+        <TableCell sx={{ bgcolor: "#0069D91A" }} align="center">
           <Logo src={techsemblyLogo} alt={"techsemblyLogo"} />
         </TableCell>
 
         {labels.map((logo, index) => (
-          <TableCell key={index}>
+          <TableCell key={index} align="center">
             <Logo src={logo.src} alt={logo.alt} />
           </TableCell>
         ))}

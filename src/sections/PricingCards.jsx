@@ -12,6 +12,7 @@ import {
 import Addon from "../components/Addon";
 import PricingCard from "../components/PricingCard";
 import PinkButton from "../components/PinkButton";
+import useResponsive from "../hooks/useResponsive";
 
 const pricingCardData = {
   clientType: "Assembly",
@@ -58,7 +59,9 @@ function VendorsAddons() {
         aria-controls="addons"
         id="addons"
       >
-        <Typography>Storefront/Vendors addons</Typography>
+        <Typography variant="body2" component="p" sx={{ fontWeight: "700" }}>
+          Storefront/Vendors addons
+        </Typography>
       </AccordionSummary>
       <AccordionDetails>
         <Stack sx={{ gap: 2 }}>
@@ -98,6 +101,7 @@ function LaunchAcrossMultipleMarkets() {
 
 export default function PricingCards({ sx }) {
   const theme = useTheme();
+  const isMobile = useResponsive("down", "sm");
   return (
     <Stack
       component={"section"}
@@ -105,7 +109,7 @@ export default function PricingCards({ sx }) {
       flexWrap={"wrap"}
       alignItems={"stretch"}
       justifyContent={"center"}
-      sx={{ gap: 7, px: 1.5, ...sx }}
+      sx={{ gap: isMobile ? 7 : 3, px: 1.5, ...sx }}
     >
       <PricingCard
         color={theme.palette.blue.light}

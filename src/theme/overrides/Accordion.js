@@ -5,6 +5,8 @@ export default function Accordion(theme) {
     MuiAccordion: {
       styleOverrides: {
         root: {
+          borderRadius: 0,
+          boxShadow: "none",
           "&.Mui-expanded": {
             boxShadow: "none",
             borderRadius: 0,
