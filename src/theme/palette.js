@@ -8,15 +8,23 @@ function createGradient(color1, color2) {
 const Dark = {
   900: "#0A1B2B",
   600: "#7D8089",
+  700: "#49545E",
 };
 
+const Blue = {
+  light: "#0069D9",
+};
+
+const Validation = {
+  success: "#20C08D",
+};
 // SETUP COLORS
 const PRIMARY = {
-  lighter: "#C8FACD",
-  light: "#5BE584",
-  main: "#00AB55",
-  dark: "#007B55",
-  darker: "#005249",
+  lighter: "#0069D9",
+  light: "#0069D9",
+  main: "#0069D9",
+  dark: "#0069D9",
+  darker: "#0069D9",
 };
 const SECONDARY = {
   lighter: "#D6E4FF",
@@ -112,6 +120,8 @@ const COMMON = {
     hoverOpacity: 0.08,
     disabledOpacity: 0.48,
   },
+  blue: Blue,
+  validation: Validation,
 };
 
 const palette = {

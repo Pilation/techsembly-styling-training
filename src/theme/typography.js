@@ -12,23 +12,23 @@ const typography = {
   fontWeightBold: 700,
 
   h1: {
-    fontWeight: 700,
-    lineHeight: 80 / 64,
-    fontSize: pxToRem(40),
-    letterSpacing: 2,
-    ...responsiveFontSizes({ sm: 52, md: 58, lg: 64 }),
+    fontWeight: 400,
+    lineHeight: "100%",
+    fontSize: pxToRem(48),
+    // letterSpacing: 2,
+    ...responsiveFontSizes({ sm: 40, md: 44, lg: 48 }),
   },
   h2: {
     fontWeight: 700,
-    lineHeight: 64 / 48,
+    lineHeight: "150%",
     fontSize: pxToRem(32),
-    ...responsiveFontSizes({ sm: 40, md: 44, lg: 48 }),
+    ...responsiveFontSizes({ sm: 32, md: 32, lg: 35 }),
   },
   h3: {
     fontWeight: 700,
     lineHeight: 1.5,
     fontSize: pxToRem(24),
-    ...responsiveFontSizes({ sm: 26, md: 30, lg: 32 }),
+    ...responsiveFontSizes({ sm: 24, md: 30, lg: 32 }),
   },
   h4: {
     fontWeight: 700,
@@ -59,12 +59,12 @@ const typography = {
     fontSize: pxToRem(14),
   },
   body1: {
-    lineHeight: 1.5,
-    fontSize: pxToRem(16),
+    lineHeight: "150%",
+    fontSize: pxToRem(18),
   },
   body2: {
-    lineHeight: 22 / 14,
-    fontSize: pxToRem(14),
+    lineHeight: "125%",
+    fontSize: pxToRem(16),
   },
   caption: {
     lineHeight: 1.3,
