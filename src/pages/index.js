@@ -1,22 +1,19 @@
+// next
 import Head from "next/head";
+// react
 import { useState } from "react";
-import { Box, Typography, useTheme } from "@mui/material";
-import { styled } from "@mui/material/styles";
+// mui
+import { Box } from "@mui/material";
 
-import Announcement from "../components/Announcement";
-import Header from "../components/Header";
+// sections
+import Announcement from "../sections/Announcement";
+import Header from "../sections/Header";
 import Join30days from "../sections/Join30days";
 import PricingCards from "../sections/PricingCards";
 import FeaturesTable from "../sections/FeaturesTable";
-import useResponsive from "../hooks/useResponsive";
-
-const TypographyTextCenter = styled(Typography)({
-  textAlign: "center",
-});
 
 export default function Home() {
   const [tryTodayIsOpen, setTryTodayIsOpen] = useState(true);
-  const isMobile = useResponsive("down", "sm");
   const closeAnnouncement = () => {
     setTryTodayIsOpen(false);
   };

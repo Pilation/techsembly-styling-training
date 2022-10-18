@@ -1,4 +1,6 @@
-import Iconify from "../components/Iconify";
+// next
+import NextLink from "next/link";
+// mui
 import {
   Typography,
   IconButton,
@@ -7,11 +9,11 @@ import {
   useTheme,
   Box,
 } from "@mui/material";
-import PinkButton from "./PinkButton";
-import NextLink from "next/link";
+// components
+import Iconify from "../components/Iconify";
+import PinkButton from "../components/PinkButton";
+// hooks
 import useResponsive from "../hooks/useResponsive";
-
-// ----------------------------------------------------------------------
 
 export default function Announcement({ handleClick, sx }) {
   const theme = useTheme();

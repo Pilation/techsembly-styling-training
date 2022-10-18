@@ -1,4 +1,4 @@
-import Iconify from "../components/Iconify";
+// mui
 import {
   Box,
   Typography,
@@ -8,6 +8,8 @@ import {
   Divider,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
+// components
+import Iconify from "../components/Iconify";
 import Addon from "./Addon";
 
 const TypographyTextCenter = styled(Typography)({
@@ -30,7 +32,7 @@ function ProsPoint({ value }) {
       <Iconify
         icon={"teenyicons:tick-circle-solid"}
         color={theme.palette.validation.success}
-        style={{ flexShrink: 0 }}
+        sx={{ flexShrink: 0 }}
       />
       <Typography variant="body2" component="span" color="text.secondary">
         {value}

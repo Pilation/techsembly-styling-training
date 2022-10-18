@@ -18,7 +18,6 @@ const Blue = {
 const Validation = {
   success: "#20C08D",
 };
-// SETUP COLORS
 const PRIMARY = {
   lighter: "#0069D9",
   light: "#0069D9",

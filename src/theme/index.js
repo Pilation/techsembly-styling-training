@@ -6,9 +6,6 @@ import {
   createTheme,
   ThemeProvider as MUIThemeProvider,
 } from "@mui/material/styles";
-// hooks
-// import useSettings from '../hooks/useSettings';
-//
 import palette from "./palette";
 import typography from "./typography";
 import breakpoints from "./breakpoints";
@@ -29,7 +26,6 @@ export default function ThemeProvider({ children }) {
     shape: { borderRadius: 8 },
     shadows: shadows,
     customShadows: customShadows,
-    // themeDirection: 'rtl',
   }));
 
   const theme = createTheme(themeOptions);

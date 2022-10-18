@@ -1,6 +1,8 @@
-import Iconify from "../components/Iconify";
+// mui
 import { Typography, Button, Stack, useTheme } from "@mui/material";
 import { styled } from "@mui/material/styles";
+// components
+import Iconify from "../components/Iconify";
 
 const TypographyTextCenter = styled(Typography)({
   textAlign: "center",
@@ -30,12 +32,7 @@ export default function Join30days({ sx }) {
           color={theme.palette.blue.light}
         />
       </Button>
-      <TypographyTextCenter
-        color="text.primary"
-        variant="body1"
-        component="p"
-        // sx={{ fontSize: 14, color: theme.palette.text.primary }}
-      >
+      <TypographyTextCenter color="text.primary" variant="body1" component="p">
         No credit card required
       </TypographyTextCenter>
     </Stack>

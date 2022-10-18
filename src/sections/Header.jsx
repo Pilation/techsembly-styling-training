@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Iconify from "../components/Iconify";
 import { IconButton, Stack, useTheme } from "@mui/material";
-import Logo from "./Logo";
+import Logo from "../components/Logo";
 
-export default function Header() {
+export default function Header(sx) {
   const theme = useTheme();
   const [menuOpened, setMenuOpened] = useState(false);
   return (
@@ -16,6 +16,7 @@ export default function Header() {
         py: 2.5,
         px: 1.5,
         boxShadow: "0px 0px 20px rgba(207, 207, 207, 0.3)",
+        ...sx,
       }}
     >
       <Logo />

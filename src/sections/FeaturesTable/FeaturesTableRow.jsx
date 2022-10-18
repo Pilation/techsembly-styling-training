@@ -1,4 +1,6 @@
+// mui
 import { Typography, TableRow, TableCell, useTheme } from "@mui/material";
+// components
 import Iconify from "../../components/Iconify";
 
 export default function FeaturesTableRow({ row, sx }) {
@@ -10,7 +12,7 @@ export default function FeaturesTableRow({ row, sx }) {
     return (
       <Iconify
         icon={"charm:plus"}
-        style={{ transform: "rotate(45deg)" }}
+        sx={{ transform: "rotate(45deg)" }}
         color="#fff"
       />
     );
@@ -28,6 +30,7 @@ export default function FeaturesTableRow({ row, sx }) {
         <Iconify
           icon={"teenyicons:tick-circle-solid"}
           color={theme.palette.validation.success}
+          sx={{ overflow: "hidden", bgcolor: "#fff", borderRadius: "50%" }}
         />
       </TableCell>
       {cells.map((cell, index) => (

@@ -2,8 +2,7 @@ import { pxToRem, responsiveFontSizes } from "../utils/getFontValue";
 
 // ----------------------------------------------------------------------
 
-const FONT_PRIMARY = "circular, sans-serif"; // Google Font
-// const FONT_SECONDARY = 'CircularStd, sans-serif'; // Local Font
+const FONT_PRIMARY = "circular, sans-serif";
 
 const typography = {
   fontFamily: FONT_PRIMARY,
@@ -15,7 +14,6 @@ const typography = {
     fontWeight: 400,
     lineHeight: "100%",
     fontSize: pxToRem(48),
-    // letterSpacing: 2,
     ...responsiveFontSizes({ sm: 40, md: 44, lg: 48 }),
   },
   h2: {

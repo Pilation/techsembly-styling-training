@@ -1,9 +1,10 @@
+// next
 import Image from "next/image";
-import { Box } from "@mui/material";
-import logoPath from "../../public/logo/techsemblyLogoBlack.svg";
 import NextLink from "next/link";
-
-// ----------------------------------------------------------------------
+// mui
+import { Box } from "@mui/material";
+// logo
+import logoPath from "../../public/logo/techsemblyLogoBlack.svg";
 
 export default function Logo({ sx, ...other }) {
   return (

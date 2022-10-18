@@ -1,4 +1,4 @@
-import Iconify from "../components/Iconify";
+// mui
 import {
   Box,
   Typography,
@@ -9,10 +9,14 @@ import {
   AccordionDetails,
   Link,
 } from "@mui/material";
+// hooks
+import useResponsive from "../hooks/useResponsive";
+
+// components
+import Iconify from "../components/Iconify";
 import Addon from "../components/Addon";
 import PricingCard from "../components/PricingCard";
 import PinkButton from "../components/PinkButton";
-import useResponsive from "../hooks/useResponsive";
 
 const pricingCardData = {
   clientType: "Assembly",
@@ -53,7 +57,7 @@ function VendorsAddons() {
           <Iconify
             icon={"ic:round-expand-more"}
             color="text.primary"
-            style={{ fontSize: "25px" }}
+            sx={{ fontSize: "25px" }}
           />
         }
         aria-controls="addons"

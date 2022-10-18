@@ -1,6 +1,10 @@
-import { TableHead, TableRow, TableCell, Typography } from "@mui/material";
+// next
 import Image from "next/image";
+// mui
+import { TableHead, TableRow, TableCell, Typography } from "@mui/material";
+// logo
 import techsemblyLogo from "../../../public/logo/techsemblyLogo.svg";
+// components
 import EmptyRow from "./EmptyRow";
 
 function Logo({ src, alt }) {
